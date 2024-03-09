@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">r
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+
+
+<style type="text/css">
+    
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    scroll-behavior: auto;
+}
+:root{
+    --bg-color:#0505058c;
+    --second-color:rgb(36, 38, 37);
+    --text-color:#fdfdfb;
+    --main-color:rgb(60, 210, 238);
+
+}
+html{
+    font-size: 50%;
+    overflow-x: hidden;
+    
+
+}
+body{
+    background-color:var(--bg-color);
+    color: var(--text-color);
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+
+
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header.sticky{
+    border-bottom: .1rem solid rgba(0 , 0 ,0 ,.3);
+}
+.logo{
+    font-size: 2.4rem;
+    color: var(--text-color);
+    font-weight: 600;
+
+}
+.navbar a{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+.navbar  :hover,
+.navbar a.active{
+
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 3.5rem;
+    color: var(--text-color);
+    display: none;
+
+}
+.home{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.home-img img{
+width: 28vw;
+
+}
+.home-img img:hover{
+    transform: scale(1,1);
+    transition:.8s ease-in-out;
+}
+.home-content h3{
+    font-size:3rem;
+    font-weight: 700;
+    
+    
+}
+.home-content h1{
+ font-size: 5.9rem;
+ font-size: 700;
+line-height:1.4 ;
+}
+.home-content p{
+    font-size: 1.4rem;
+}
+
+.social-media a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .1rem solid var(--main-color);
+    border-radius:50% ;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.4rem 3rem 0;
+    transition: .5s ease;
+
+}
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--second-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+span{
+    color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.4rem;
+    background:var(--main-color);
+    border-radius:4rem ;
+    box-shadow: 0 0 2rem var(--main-color);
+    font-size: 1.4rem;
+    color: var(--second-color);
+    font-weight: 600;
+
+}
+.btn:hover{
+    box-shadow: none ;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background: var(--second-color);
+}
+.about img{
+    width: 26vw;
+
+}
+.heading{
+    text-align: center;
+    font-size: 4.1rem;
+
+} 
+.about-content h2{
+     text-align: left;
+     line-height: 1.2;
+     
+}
+.about-content h3{
+
+     font-size: 2.4rem;
+
+}
+.about-content p{
+
+     font-size: 1.7rem;
+     margin: 3rem;
+
+}
+.services h2{
+     margin-bottom: 5rem;
+}
+.services-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.services-container .services-box{
+    flex: 1 1 30rem;
+    background: var(--second-color);
+    padding: 3rem 3rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .3rem solid var(--bg-color);
+    transition: .4s ease;
+}
+.services-box i{
+font-size: 7rem;
+color: var(--main-color);
+}
+.services-box h3{
+    font-size: 2.6rem;
+    
+}
+.services-box p{
+    line-height: auto;
+    font-size: 1.4rem;
+    margin: 1rem 0  3rem;
+}
+.services-container .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.03);
+}
+.portfolio{
+    color: var(--text-color);
+
+}
+.portfolio h2{
+    margin-bottom: 4rem;
+}
+.portfolio-container{
+display: grid;
+align-items: center;
+gap: 4rem;
+
+}
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 0rem;
+    box-shadow: 0 0 7rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+.portfolio-box img{
+    width: 85%;
+    height: 50%;
+}
+.portfolio-box img:hover{
+    transform: scale(2);
+}
+
+.portfolio-container .portfolio-layer{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(rgba(0 ,0 ,0,.1),var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: right;
+    padding:0.4rem;
+    transform: translateY(100%);
+}
+.portfolio-layer h4{
+    font-size:3.5rem;
+}
+.portfolio-layer p{
+    padding-top: 4rem;
+    font-size: 2rem;
+    align-items: end;
+    margin: .3rem 0 1rem;
+}
+.portfolio-layer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 0%;
+}
+.portfolio-layer a{
+ font-size: 2rem;
+color: var(--second-color);
+
+}
+.contact h2{
+    margin-bottom: 3rem;
+
+}
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom:3rem ;
+
+}
+.contact form .input-box{
+    display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.9rem;
+    color: var(--text-color);
+    background: var(--text-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+.contact form .input-box input{
+    width: 49%;
+
+}
+.contact form textarea{
+    resize: none;
+}
+.contact form .btn{
+    margin-top: 3rem;
+    cursor: pointer;
+    transition: 1.9s ease;
+
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-color);
+}
+.footer-iconTop a{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+padding: .8rem;
+background: var(--main-color);
+border-radius: .8rem;
+transition: .5s ease;
+}
+.footer-iconTop:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+    transition: .5s ease 5s ;
+}
+.footer-iconTop a i{
+ font-size: 2.4rem;
+ color: var(--second-color);
+}
+</style>
+
+<script type="text/javascript">
+    
+
+    let header=document.querySelector('header')
+header.classList.toggle('sticky',window.scrollY>100)
+
+</script>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <header class="header"> 
+        <a href="" class="logo"> Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Expertise</a>
+            <a href="#portfolio">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello,It's Me </h3>
+            <h1> Nisha Bhoyar</h1>
+            <h3>And I am a
+                <span>Full Stack Developer</span>
+            </h3>
+            <p>As a full stack developer, I specialize in both frontend and backend technologies, allowing me to create end-to-end solutions for web applications. My responsibilities encompass designing and developing user interfaces using HTML, CSS, and JavaScript on the frontend, as well as building server-side logic, APIs, and databases on the backend using languages like JavaScript, Python, or Java, and frameworks such as React, Node.js, Django, or Spring Boot. I ensure seamless integration between frontend and backend systems, conduct thorough testing, and optimize performance to deliver robust, scalable, and user-friendly applications. With a comprehensive understanding of both frontend and backend development, I excel in delivering cohesive solutions that meet the needs of modern web development projects.</p>
+            <div class="social-media">
+                <a href="https://github.com/NishaBhoyar2401"><i class='bx bxl-github'></i></a>
+                <a href="www.linkedin.com/in/nisha-bhoyar"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            </div>
+            <div>
+            <a href="Nisha_Bhoyar_Resume.pdf" class="btn">Downlod CV</a>
+            </div>
+        </div>
+       
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="About.jpg" alt="">
+        </div>
+        <div class=" about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Full stack java Developer !</h3>
+            <p>A Full Stack Java Developer proficient in Frontend development is a professional who possesses expertise in both the frontend and backend aspects of web development using Java technologies. </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h2 class="heading"> <span>Expertise</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Frontend Developr 
+                </h3>
+                <p>A As a frontend developer, I specialize in crafting captivating and user-friendly web interfaces. My role involves transforming design concepts into responsive and accessible web pages using HTML, CSS, and JavaScript. I focus on implementing interactive elements and ensuring seamless functionality across various devices and browsers.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-data'></i>
+                <h3>Backend Developer</h3>
+                <p>  a backend developer, my primary focus is on building robust and scalable server-side applications. I work with programming languages such as Python, Java, or Node.js, along with frameworks like Django, Spring Boot, or Express.js, to develop the logic and functionality that powers web applications.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="login.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Authentication</h4>
+                    <p>Authentication is the process of recognizing a user’s identity. It is the mechanism of 
+                   associating an incoming request with a set of identifying credentials. The credentials provided 
+                  are compared to those on a file in a database of the authorized user’s information on a local 
+                  operating system or within an authentication server.</p>
+                     <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+            <form action="#">
+                <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+                <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" ></textarea>
+            <input type="submit" class="btn" value="Send Message">
+            </form>
+
+        </section>
+        <footer class="footer">
+            <div class="footer-text">
+                <p> Thank You....</p>
+            </div>
+            <div class="footer-iconTop">
+                <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+            </div>
+        </footer>
+   
+</body>
+
+</html>
